@@ -669,6 +669,9 @@ export class Collection<K, V> extends Map<K, V> {
 		return new this.constructor[Symbol.species](this).sort((av, bv, ak, bk) => compareFunction(av, bv, ak, bk));
 	}
 
+	/**
+	 * Returns an array of values in the collection
+	 */
 	public toJSON() {
 		// toJSON is called recursively by JSON.stringify.
 		return [...this.values()];
